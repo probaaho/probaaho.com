@@ -1,0 +1,26 @@
+version: '3.1'
+services:
+    webserver:
+        build:
+            context: ./apache2-docker/
+            dockerfile: Dockerfile
+        restart: unless-stopped
+        volumes:
+            - ./src:/var/www/html
+        environment:
+            VIRTUAL_HOST: probaaho.com
+            VIRTUAL_PORT: 80
+            LETSENCRYPT_HOST: probaaho.com
+            LETSENCRYPT_EMAIL: probaaho@gmail.com
+        expose:
+            - 80
+        ports:
+            - "8080:80"
+
+networks:
+    default:
+        external:
+            name: nginx-proxy
+    
+volumes:
+    data:
