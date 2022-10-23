@@ -8,14 +8,10 @@ services:
         volumes:
             - ./src:/var/www/html
         environment:
-            VIRTUAL_HOST: probaaho.com
-            VIRTUAL_PORT: 80
-            LETSENCRYPT_HOST: probaaho.com
-            LETSENCRYPT_EMAIL: probaaho@gmail.com
-        expose:
-            - 80
-        ports:
-            - "8080:80"
+            VIRTUAL_HOST: probaaho.shuhanmirza.com
+            VIRTUAL_PORT: 8080
+            LETSENCRYPT_HOST: probaaho.shuhanmirza.com
+            LETSENCRYPT_EMAIL: shuhan.mirza@gmail.com
 
 networks:
     default:
